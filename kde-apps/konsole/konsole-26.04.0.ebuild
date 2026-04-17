@@ -66,6 +66,6 @@ src_test() {
 }
 
 pkg_postinst() {
-	optfeature "Quick Commands warning feature" dev-util/shellcheck
 	ecm_pkg_postinst
+	optfeature "Quick Commands warning feature" dev-util/shellcheck
 }
