@@ -7,7 +7,7 @@ ECM_HANDBOOK="optional"
 ECM_TEST="true"
 KFMIN=6.19.0
 QTMIN=6.10.1
-inherit ecm gear.kde.org
+inherit ecm gear.kde.org optfeature
 
 DESCRIPTION="KDE's terminal emulator"
 HOMEPAGE="https://apps.kde.org/konsole/ https://konsole.kde.org"
@@ -61,4 +61,9 @@ src_test() {
 	)
 
 	ecm_src_test
+}
+
+pkg_postinst() {
+	optfeature "Quick Commands warning feature" dev-util/shellcheck
+	ecm_pkg_postinst
 }
